@@ -1,9 +1,9 @@
-import ElementPlus from 'element-plus'
-import { createI18n } from 'vue-i18n'
-import 'element-plus/lib/theme-chalk/index.css'
-import localeZH from 'element-plus/lib/locale/lang/zh-cn'
-import localeEN from 'element-plus/lib/locale/lang/en'
-import messages from '../utils/i18n'
+const ElementPlus = require('element-plus');
+const { createI18n } = require('vue-i18n');
+const cssFilePath = require.resolve('element-plus/dist/index.css');
+const localeZH = require('element-plus/lib/locale/lang/zh-cn').default;
+const localeEN = require('element-plus/lib/locale/lang/en').default;
+const messages = require('../utils/i18n').default;
 // console.log(msg)
 
 // const messages = {
@@ -23,7 +23,7 @@ const i18n = createI18n({
   messages,
 })
 
-export default (app) => {
+  exports=(app) => {
   app.use(ElementPlus, { locale:localeZH })
   app.use(i18n)
 }
